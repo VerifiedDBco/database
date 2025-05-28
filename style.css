@@ -90,9 +90,9 @@ a {
 }
 
 #hero .logo {
-    max-width: 300px;
-    padding-top: 20px;
-    margin-bottom: 30px;
+    max-width: 200px;
+ /*   padding-top: 20px;   */
+    margin: 10px;
 }
 
 #hero .tagline {
