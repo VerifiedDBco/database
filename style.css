@@ -91,6 +91,7 @@ a {
 
 #hero .logo {
     max-width: 300px;
+    padding-top: 20px;
     margin-bottom: 30px;
 }
 
@@ -430,6 +431,12 @@ footer a:hover {
 
     .faq-question {
         font-size: 1em;
+    }
+}
+
+@media (max-width: 480px)  {
+    .logo { 
+        max-width: 200px;
     }
 }
 
