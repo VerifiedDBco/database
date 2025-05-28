@@ -91,8 +91,8 @@ a {
 
 #hero .logo {
     max-width: 250px;
- /*   padding-top: 20px;   */
-    margin: 10px;
+    padding: 20px;   
+
 }
 
 #hero .tagline {
