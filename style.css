@@ -251,6 +251,7 @@ a {
     margin-right: 15px;
     object-fit: cover;
     border: 2px solid var(--secondary-color); /* Small border for emphasis */
+    display: none;
 }
 
 .customer-name {
