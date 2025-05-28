@@ -206,6 +206,107 @@ a {
     margin: 0 auto;
 }
 
+/* Testimonials Section */
+#testimonials {
+    padding: 80px 0;
+    background-color: var(--light-bg); /* Use a light background similar to other sections */
+}
+
+#testimonials h2 {
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--shadow); /* Soft shadow for a modern look */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the start */
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+.customer-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Circular image */
+    margin-right: 15px;
+    object-fit: cover;
+    border: 2px solid var(--secondary-color); /* Small border for emphasis */
+}
+
+.customer-name {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0;
+    font-size: 1.1em;
+}
+
+.customer-city {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.stars {
+    margin-bottom: 15px;
+}
+
+.star {
+    color: #ffc107; /* Gold color for stars */
+    font-size: 1.4em;
+    margin-right: 2px;
+}
+
+.feedback {
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    line-height: 1.7;
+    flex-grow: 1; /* Allows feedback to take up available space */
+}
+
+.pack-bought {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 0.95em;
+    margin-top: auto; /* Pushes pack info to the bottom */
+}
+
+/* Responsive adjustments for Testimonials */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr; /* Stack testimonials on smaller screens */
+    }
+
+    .testimonial-card {
+        padding: 25px;
+    }
+
+    .profile-img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
 /* FAQs Section */
 #faqs {
     padding: 80px 0;
