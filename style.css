@@ -1,37 +1,37 @@
-/*
-* File: style.css
-* Description: Stylesheet for Verified DB Co website.
-*/
-
 /* --- Table of Contents ---
 1.  Global Styles & Variables
-2.  Utility Classes
-3.  Header
+2.  Header & Navigation
+3.  Buttons & Utility
 4.  General Section Styling
 5.  Hero Section
-6.  Features (Why Choose Us) Section
-7.  Reviews Section (Slider)
-8.  Pricing Section
-9.  FAQ Section (Accordion)
-10. Footer
-11. WhatsApp Floating Button
-12. Responsive Design (Media Queries)
+6.  Why Choose Us Section
+7.  Our Team Section
+8.  Pricing Sections
+9.  Reviews Section (Slider)
+10. Testimonials Section
+11. FAQ Section (Accordion)
+12. Contact Section
+13. Footer
+14. WhatsApp Floating Button
+15. Responsive Design (Media Queries)
 */
 
 /* 1. Global Styles & Variables */
 :root {
-    --primary-color: #0056B3; /* Dodger Blue */
-    --white-color: #FFFFFF;
-    --dark-blue-text: #172a78;
-    --light-gray-bg: #f8f9fa;
-    --gray-text: #555;
-    --border-color: #e0e0e0;
+    --primary-color: #1877F2; /* A clean, calming blue */
+    --secondary-color: #f0f4f8; /* A very light, professional gray */
+    --dark-text: #212529;
+    --light-text: #6c757d;
+    --white: #ffffff;
+    --border-color: #dee2e6;
+    --font-family: 'Poppins', sans-serif;
+    --transition-speed: 0.3s;
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -39,335 +39,513 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    color: var(--gray-text);
-    background-color: var(--white-color);
+    font-family: var(--font-family);
     line-height: 1.6;
+    color: var(--light-text);
+    background-color: var(--white);
+    overflow-x: hidden;
 }
 
-/* 2. Utility Classes */
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1.5rem;
 }
 
-.section {
-    padding: 60px 0;
-}
-
-.section:nth-child(even) {
-    background-color: var(--light-gray-bg);
-}
-
-h1, h2, h3 {
-    color: var(--dark-blue-text);
-    margin-bottom: 20px;
-    font-weight: 700;
+h1, h2, h3, h4 {
+    color: var(--dark-text);
+    line-height: 1.2;
+    font-weight: 600;
 }
 
 h2 {
-    text-align: center;
     font-size: 2.5rem;
+    font-weight: 700;
 }
 
-.highlight {
-    color: var(--primary-color);
+section {
+    padding: 6rem 0;
 }
 
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
+.section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.section-header p {
     font-size: 1.1rem;
-    border: 2px solid transparent;
+    max-width: 700px;
+    margin: 1rem auto 0;
 }
 
-.btn-primary {
-    background-color: var(--primary-color);
-    color: var(--white-color);
-}
-
-.btn-primary:hover {
-    background-color: #0073e6;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
-}
-
-.btn i {
-    margin-right: 8px;
-}
-
-/* 3. Header */
-header {
-    background: var(--white-color);
-    padding: 15px 0;
+/* 2. Header & Navigation */
+.main-header {
+    background-color: var(--white);
+    padding: 1.2rem 0;
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 }
 
-header .container {
+.main-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header .logo a {
-    font-size: 1.8rem;
+.logo {
+    font-size: 1.6rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--dark-text);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
     text-decoration: none;
+    color: var(--light-text);
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
 }
 
-header .tagline {
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+/* 3. Buttons & Utility */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px; /* Square buttons */
+    text-decoration: none;
+    font-weight: 600;
     font-size: 1rem;
-    color: var(--gray-text);
-    font-style: italic;
+    transition: all var(--transition-speed) ease;
 }
 
-/* 4. General Section Styling is handled by .section class */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.2);
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* 4. General Section Styling */
+.pricing-section,
+.faq-section {
+    background-color: var(--secondary-color);
+}
+
+.contact-section,
+.why-choose-us,
+.reviews-section,
+.team-section,
+.testimonials-section {
+    background-color: var(--white);
+}
 
 /* 5. Hero Section */
-#hero {
+.hero {
+    background-color: var(--secondary-color);
     text-align: center;
-    padding: 80px 0;
 }
 
-#hero h1 {
-    font-size: 3.2rem;
-    line-height: 1.2;
+.hero h2 {
+    font-size: 3.5rem;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    color: var(--dark-text);
 }
 
-#hero .subtitle {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 30px;
+.hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    color: var(--light-text);
 }
 
-#hero .price {
-    margin-bottom: 30px;
-}
-
-#hero .current-price {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
-#hero .original-price {
-    font-size: 1.5rem;
-    text-decoration: line-through;
-    color: var(--gray-text);
-    margin-left: 10px;
-}
-
-/* 6. Features (Why Choose Us) Section */
-.features-grid {
+/* 6. Why Choose Us Section */
+.reason-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    gap: 2rem;
 }
 
-.feature-item {
+.reason-item {
     text-align: center;
-    padding: 30px;
-    background: var(--white-color);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 2.5rem 1.5rem;
+    background: var(--secondary-color);
+    border-radius: 8px;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
-.feature-item:hover {
+.reason-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
-.feature-item i {
-    font-size: 3rem;
+.reason-item i {
+    font-size: 2.5rem;
     color: var(--primary-color);
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
 }
 
-.feature-item h3 {
+/* 7. Our Team Section */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.team-member {
+    padding: 2.5rem 1.5rem;
+    background: var(--secondary-color);
+    border-radius: 8px;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--primary-color);
+}
+
+.team-member h3 {
+    margin-bottom: 0.5rem;
     font-size: 1.5rem;
 }
 
-/* 7. Reviews Section (Slider) */
-.review-slider {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    padding: 20px 0;
-    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
-}
-
-.slider-track {
-    display: flex;
-    /* Animation is set in JS */
-    animation: scroll 60s linear infinite;
-}
-
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-250px * 20)); } /* slide_width * number_of_slides */
-}
-
-.slide {
-    flex-shrink: 0;
-    width: 320px;
-    margin: 0 15px;
-    padding: 25px;
-    background: var(--white-color);
-    border-radius: 10px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.slide p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-}
-
-.slide h4 {
-    font-size: 1.1rem;
+.team-member .role {
+    font-style: italic;
     color: var(--primary-color);
-    text-align: right;
-    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
-/* 8. Pricing Section */
-#pricing {
-    background-color: var(--light-gray-bg);
+/* 8. Pricing Sections */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
 .pricing-card {
-    max-width: 450px;
-    margin: 40px auto 0;
-    padding: 40px;
-    background: var(--white-color);
-    border: 2px solid var(--primary-color);
-    border-radius: 15px;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(30, 144, 255, 0.15);
+    position: relative;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
-.pricing-card h3 {
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-text);
+}
+
+.pricing-card .price {
     font-size: 2rem;
-}
-
-.pricing-card .price-tag {
-    font-size: 3rem;
     font-weight: 700;
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
 }
 
 .pricing-card ul {
     list-style: none;
-    margin-bottom: 30px;
     text-align: left;
-    display: inline-block;
+    margin-bottom: 2rem;
+    flex-grow: 1;
 }
 
-.pricing-card ul li {
-    margin-bottom: 10px;
+.pricing-card li {
+    margin-bottom: 0.75rem;
+    color: var(--light-text);
+    font-weight: 500;
+}
+
+.pricing-card li i {
+    color: var(--primary-color);
+    margin-right: 0.75rem;
+}
+
+.bestseller-label {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 0.85rem;
+    padding: 0.25rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 9. Reviews Section (Slider) */
+.reviews-section {
+    text-align: center;
+}
+
+.reviews-slider {
+    overflow: hidden;
+    position: relative;
+    padding: 2.5rem 0;
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.slider-track {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    width: max-content;
+    gap: 1.5rem;
+}
+
+.review-item {
+    flex-shrink: 0;
+    width: 300px;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.review-item p {
+    font-style: italic;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--light-text);
+}
+
+.review-item h4 {
+    font-weight: 600;
+    color: var(--dark-text);
+    text-align: right;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-316px * 20)); }
+}
+
+/* 10. Testimonials Section */
+.testimonials-section {
+    background-color: var(--secondary-color);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform var(--transition-speed) ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--primary-color);
+}
+
+.testimonial-card .quote {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: var(--dark-text);
+}
+
+.testimonial-card .client-info h4 {
+    margin: 0;
     font-size: 1.1rem;
 }
 
-.pricing-card ul li i {
-    color: var(--primary-color);
-    margin-right: 10px;
+.testimonial-card .client-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--light-text);
 }
 
-/* 9. FAQ Section (Accordion) */
-.faq-container {
+/* 11. FAQ Section (Accordion) */
+.faq-accordion {
     max-width: 800px;
-    margin: 40px auto 0;
+    margin: 0 auto;
 }
 
 .faq-item {
-    border-bottom: 1px solid var(--border-color);
+    background-color: var(--white);
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: box-shadow var(--transition-speed) ease;
 }
 
 .faq-question {
-    width: 100%;
-    background: none;
-    border: none;
-    padding: 20px;
-    font-size: 1.2rem;
-    text-align: left;
+    padding: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
     font-weight: 600;
-    color: var(--dark-blue-text);
+    color: var(--dark-text);
+}
+
+.faq-question h4 {
+    margin: 0;
+    flex-grow: 1;
 }
 
 .faq-question i {
-    transition: transform 0.3s ease;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    transition: transform var(--transition-speed) ease;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(45deg);
 }
 
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out, padding 0.3s ease;
-}
-
-.faq-answer p {
-    padding: 0 20px 20px;
-    color: var(--gray-text);
+    transition: max-height var(--transition-speed) ease, padding var(--transition-speed) ease;
+    padding: 0 1.5rem;
 }
 
 .faq-item.active .faq-answer {
-    max-height: 200px; /* Adjust if answers are longer */
+    max-height: 200px;
+    padding: 0 1.5rem 1.5rem;
 }
 
-.faq-item.active .faq-question i {
-    transform: rotate(180deg);
+.faq-answer p {
+    color: var(--light-text);
 }
 
-/* 10. Footer */
-footer {
-    background: var(--dark-blue-text);
-    color: var(--white-color);
-    padding: 25px 0;
+/* 12. Contact Section */
+.contact-section {
     text-align: center;
 }
 
-footer .container {
+.contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.whatsapp-btn {
+    background-color: #25D366;
+    color: var(--white);
+    border: none;
+    margin-bottom: 1.5rem;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+}
+
+.contact-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 1rem;
 }
 
-footer p {
-    margin-bottom: 15px;
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: var(--font-family);
+    transition: border-color var(--transition-speed) ease;
 }
 
-.social-links a {
-    color: var(--white-color);
-    font-size: 1.2rem;
-    margin: 0 10px;
-    transition: color 0.3s ease;
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
 }
 
-.social-links a:hover {
-    color: var(--primary-color);
+/* 13. Footer */
+.main-footer {
+    background-color: var(--dark-text);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 0;
 }
 
-/* 11. WhatsApp Floating Button */
+/* 14. WhatsApp Floating Button */
 .whatsapp-float {
     position: fixed;
     bottom: 25px;
     right: 25px;
-    background-color: #25D366;
+    background-color: #ffffff;
     color: var(--white-color);
     width: 60px;
     height: 60px;
@@ -386,31 +564,32 @@ footer p {
     transform: scale(1.1);
 }
 
-/* 12. Responsive Design (Media Queries) */
-
-/* For Tablets */
+/* 15. Responsive Design (Media Queries) */
 @media (max-width: 768px) {
-    h2 { font-size: 2rem; }
-    #hero h1 { font-size: 2.5rem; }
-    
-    header .container {
+    .main-header .container {
         flex-direction: column;
+        text-align: center;
+        gap: 1rem;
     }
-    
-    header .tagline {
-        margin-top: 5px;
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .reviews-slider {
+        padding: 1.5rem 0;
+    }
+    .faq-question {
+        padding: 1rem;
     }
 }
-
-/* For Mobile */
-@media (max-width: 480px) {
-    h2 { font-size: 1.8rem; }
-    #hero h1 { font-size: 2rem; }
-    #hero .subtitle { font-size: 1rem; }
-    .btn { padding: 10px 22px; font-size: 1rem; }
-
-    footer .container {
-        flex-direction: column;
-    }
-    .slide { width: 280px; 
-} 
