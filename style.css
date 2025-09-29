@@ -348,7 +348,7 @@ section {
 
 .slider-track {
     display: flex;
-    animation: scroll 30s linear infinite;
+    animation: scroll 60s linear infinite;
     width: max-content;
     gap: 1.5rem;
 }
